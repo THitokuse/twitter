@@ -1,24 +1,25 @@
-# README
+# Twitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Build Setup
+### git clone
+```
+$ git clone https://github.com/THitokuse/twitter.git
 
-Things you may want to cover:
+$ cd twitter
 
-* Ruby version
+$ docker-compose build
+```
 
-* System dependencies
+### Setup database
+```
+$ docker-compose run web bundle exec rake db:create
 
-* Configuration
+$ docker-compose run web bundle exec rake db:migrate
+```
 
-* Database creation
+### serve with hot reload at localhost:3000
+```
+$ docker-compose up
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+// To confirm localhost:3000
+```
