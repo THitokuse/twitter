@@ -7,6 +7,10 @@ $ git clone https://github.com/THitokuse/twitter.git
 
 $ cd twitter
 
+// clone時のみ行う
+// 新しいプロジェクトを立ち上げるためのコマンド
+$ docker-compose run web rails new . --force --database=mysql
+
 $ docker-compose build
 ```
 
