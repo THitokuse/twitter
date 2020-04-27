@@ -1,6 +1,11 @@
 <% @tweets.each do |tweet| %>
-    <p>Unko</p>
-    <p><%= tweet.title%></p>
-    <p><%= tweet.comment%></p>
-
+    <div class="contents row" >
+        <div class="content_post">
+            <%= simple_format(tweet.title) %>
+            <span class="name"><%= tweet.comment%></div>
+        </div>
+    </div>
 <% end %>
+<div class="contents row" >
+    <%= paginate(@tweets) %>
+</div>
