@@ -1,6 +1,19 @@
 <% @tweets.each do |tweet| %>
-    <div class="contents row" >
-        <div class="content_post">
+    <div class="contents row">
+        <div class="content_post" style="background-color:#ccc;">
+            <% if user_signed_in? && current_user.id == tweet.user_id%>
+                <div class="more">
+                    <span><%= image_tag 'arrow_top.png'%></span>
+                    <ul class="more_list">
+                        <li>
+                            <%= link_to '編集' , "tweets/#{tweet.id}/edit" ,method: :get %>
+                        </li>
+                        <li>
+                            <%= link_to '削除' , "tweets/#{tweet.id}" ,method: :delete %>
+                        </li>
+                    </ul>
+                </div>
+            <%end%>
             <%= simple_format(tweet.title) %>
             <span class="name"><%= tweet.comment%></div>
         </div>

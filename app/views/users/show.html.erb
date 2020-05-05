@@ -1,0 +1,10 @@
+<div class="contents row" >
+    <p><%= @nickname %>さんの投稿一覧</p>
+    <% @tweets.each do |tweet| %>
+      <div class="content_post">
+        <%= simple_format(tweet.comment) %>
+        <span class="name"><%= tweet.user.nickname %></span>
+      </div>
+    <% end %>
+    <%= paginate(@tweets) %>
+  </div>
